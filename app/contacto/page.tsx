@@ -4,6 +4,7 @@ import { useState } from 'react'
 import SiteLayout from '@/components/site-layout'
 import { BannerHeroPanel, BANNER_OVERLAY_READABLE } from '@/components/banner-hero-panel'
 import { PageBanner } from '@/components/page-banner'
+import { GoogleMapEmbed } from '@/components/google-map-embed'
 import { Mail, Phone, MapPin, Clock, Send, ArrowRight, CheckCircle } from 'lucide-react'
 
 export default function ContactoPage() {
@@ -32,12 +33,12 @@ export default function ContactoPage() {
       {/* Hero */}
       <PageBanner
         imageSrc="/images/banner-contacto.png"
-        sectionClassName="pt-32 pb-16"
+        sectionClassName="page-hero"
         innerClassName="container-max"
         overlayClassName={BANNER_OVERLAY_READABLE}
       >
         <BannerHeroPanel>
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">Contacto</p>
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">RFQ</p>
           <h1 className="mb-4 text-balance font-display text-4xl font-black text-foreground md:text-5xl lg:text-6xl">
             Hablemos de tu <span className="text-gradient">proyecto</span>
           </h1>
@@ -49,7 +50,7 @@ export default function ContactoPage() {
       </PageBanner>
 
       {/* Contact Grid */}
-      <section className="section-padding bg-background">
+      <section className="bg-background py-14 sm:py-16 md:py-20 lg:py-24">
         <div className="container-max">
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Contact Info */}
@@ -143,7 +144,7 @@ export default function ContactoPage() {
 
             {/* Form */}
             <div className="lg:col-span-2">
-              <div className="surface-card rounded-sm p-8">
+              <div className="surface-card rounded-sm p-6 sm:p-8">
                 {submitted ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -297,12 +298,17 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="h-80 bg-muted flex items-center justify-center border-t border-border">
-        <div className="text-center">
-          <MapPin className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-          <p className="text-sm text-muted-foreground">Mapa interactivo</p>
-          <p className="text-xs text-muted-foreground">Polígono Industrial Norte, Madrid</p>
+      {/* Google Maps — sede Madrid */}
+      <section className="border-t border-border bg-gradient-to-b from-muted/35 to-background py-14 md:py-20" aria-label="Ubicación en mapa">
+        <div className="container-max">
+          <div className="mb-8 text-center md:mb-10 md:text-left">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Ubicación</p>
+            <h2 className="mt-2 font-display text-2xl font-bold text-foreground md:text-3xl">Encuéntranos en Madrid</h2>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground md:text-base">
+              Vista de Google Maps de nuestra dirección comercial. También atendemos proyectos en toda Latinoamérica.
+            </p>
+          </div>
+          <GoogleMapEmbed />
         </div>
       </section>
     </SiteLayout>

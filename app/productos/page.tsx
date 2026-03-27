@@ -29,7 +29,7 @@ function ProductsContent() {
       {/* Header */}
       <PageBanner
         imageSrc="/images/banner-tienda.png"
-        sectionClassName="page-hero"
+        sectionClassName="page-hero border-b border-border/40"
         innerClassName="container-max"
         aria-labelledby="tienda-heading"
         overlayClassName={BANNER_OVERLAY_READABLE}
@@ -49,12 +49,12 @@ function ProductsContent() {
         </BannerHeroPanel>
       </PageBanner>
 
-      <div className="pb-20 md:pb-24 pt-10 md:pt-12">
+      <div className="pb-16 pt-8 sm:pb-20 sm:pt-10 md:pb-24 md:pt-12">
         <div className="container-max">
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col gap-8 lg:flex-row lg:gap-10">
             {/* Sidebar */}
-            <aside className="lg:w-64 flex-shrink-0" aria-label="Filtros de productos">
-              <div className="surface-card rounded-sm p-4 sticky top-20">
+            <aside className="w-full shrink-0 lg:w-64" aria-label="Filtros de productos">
+              <div className="surface-card max-h-[min(52vh,22rem)] overflow-y-auto overscroll-contain rounded-sm p-4 lg:sticky lg:top-24 lg:max-h-none lg:overflow-visible">
                 {/* Search */}
                 <div className="relative mb-6">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden="true" />
@@ -202,7 +202,11 @@ function ProductsContent() {
 export default function ProductosPage() {
   return (
     <SiteLayout>
-      <Suspense fallback={<div className="pt-32 pb-20 px-6 text-center text-muted-foreground">Cargando productos...</div>}>
+      <Suspense
+        fallback={
+          <div className="container-max py-24 text-center text-sm text-muted-foreground sm:py-28">Cargando productos…</div>
+        }
+      >
         <ProductsContent />
       </Suspense>
     </SiteLayout>

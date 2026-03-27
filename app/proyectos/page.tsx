@@ -80,7 +80,7 @@ export default function ProyectosPage() {
       {/* Header */}
       <PageBanner
         imageSrc="/images/banner-marca.png"
-        sectionClassName="pt-32 pb-12 border-b border-primary/35"
+        sectionClassName="page-hero border-b border-primary/35 pb-10 md:pb-12"
         innerClassName="container-max"
         aria-labelledby="proyectos-heading"
         overlayClassName={BANNER_OVERLAY_READABLE}
@@ -111,7 +111,7 @@ export default function ProyectosPage() {
                 key={project.id}
                 className={`grid md:grid-cols-2 gap-8 items-center py-12 md:py-14 first:pt-6 md:first:pt-8 ${i % 2 !== 0 ? 'md:[direction:rtl]' : ''}`}
               >
-                <div className={`relative overflow-hidden rounded-sm h-72 group ${i % 2 !== 0 ? '[direction:ltr]' : ''}`}>
+                <div className={`relative overflow-hidden rounded-sm h-56 sm:h-64 md:h-72 group ${i % 2 !== 0 ? '[direction:ltr]' : ''}`}>
                   <Image
                     src={project.image}
                     alt={project.title}

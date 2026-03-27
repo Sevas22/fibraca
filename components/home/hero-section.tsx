@@ -5,18 +5,16 @@ import { ArrowRight, ChevronDown } from 'lucide-react'
 import HeroStats from '@/components/home/hero-stats'
 import HeroImageCarousel from '@/components/home/hero-image-carousel'
 
-/**
- * Alineación con `.container-max`: mismo borde izquierdo (max-w-7xl centrado + 20px).
- */
+/** Relleno horizontal equilibrado en móvil/tablet; en desktop +10px extra a la izquierda. */
 const heroTextGutter =
-  'pl-5 lg:pl-[max(1.25rem,calc((100vw-min(100vw,80rem))/2+1.25rem))] pr-5'
+  'px-4 sm:px-5 md:px-6 lg:pl-[calc(1.75rem+10px)] lg:pr-6 xl:pl-[calc(2rem+10px)] xl:pr-8'
 
 export default function HeroSection() {
   return (
     <section className="relative bg-background pt-20 lg:pt-0" aria-label="Sección principal">
       {/* Mobile / tablet: imagen arriba (dentro del contenedor con relleno) */}
       <div className="container-max lg:hidden">
-        <div className="relative h-[34vh] min-h-[200px] max-h-[380px] overflow-hidden rounded-lg">
+        <div className="relative h-[32vh] min-h-[180px] max-h-[360px] overflow-hidden rounded-md sm:min-h-[200px] sm:max-h-[380px] sm:rounded-lg">
           <HeroImageCarousel sizes="100vw" showLeftGradient={false} compact />
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-20 bg-gradient-to-t from-background to-transparent"
@@ -45,7 +43,7 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[clamp(2.35rem,4.2vw,3.65rem)] xl:text-[clamp(2.5rem,3.8vw,4rem)] font-display font-black leading-[1.05] tracking-tight text-foreground text-balance max-w-[22ch] sm:max-w-none lg:max-w-[28ch] xl:max-w-[32ch]">
+            <h1 className="max-w-[22ch] text-balance font-display text-[clamp(1.85rem,5.5vw+0.4rem,2.35rem)] font-black leading-[1.08] tracking-tight text-foreground sm:max-w-none sm:text-5xl md:text-6xl lg:max-w-[28ch] lg:text-[clamp(2.35rem,4.2vw,3.65rem)] xl:max-w-[32ch] xl:text-[clamp(2.5rem,3.8vw,4rem)]">
               Ingeniería que{' '}
               <span className="text-gradient">resiste</span>
               {' '}

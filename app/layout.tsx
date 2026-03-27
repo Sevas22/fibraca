@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Barlow } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/google-tag-manager'
 import './globals.css'
 
 const inter = Inter({
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: '#141a14',
-  userScalable: false,
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -55,7 +56,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${barlow.variable}`}>
-      <body className="font-sans bg-background text-foreground">
+      <body className="min-h-dvh font-sans bg-background text-foreground antialiased">
+        <GoogleTagManager />
+        <GoogleTagManagerNoScript />
         {children}
         <Analytics />
       </body>

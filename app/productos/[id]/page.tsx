@@ -19,10 +19,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
   return (
     <SiteLayout>
-      <div className="pt-24 pb-20">
+      <div className="pt-[5.25rem] pb-14 sm:pt-24 sm:pb-16 md:pb-20">
         <div className="container-max">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-muted-foreground mb-8">
+          <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground sm:mb-8">
             <Link href="/productos" className="hover:text-primary transition-colors flex items-center gap-1">
               <ArrowLeft className="w-3 h-3" aria-hidden="true" />
               Tienda
@@ -35,9 +35,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             <span className="text-foreground">{product.name}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          <div className="mb-12 grid gap-8 lg:mb-16 lg:grid-cols-2 lg:gap-12">
             {/* Image */}
-            <div className="relative h-96 lg:h-[500px] overflow-hidden rounded-lg bg-muted border border-border">
+            <div className="relative h-64 overflow-hidden rounded-lg border border-border bg-muted sm:h-80 md:h-96 lg:h-[500px]">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -116,8 +116,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
           {/* Specs */}
           <section className="mb-16" aria-labelledby="specs-heading">
             <h2 id="specs-heading" className="text-xl font-display font-bold text-foreground mb-6">Especificaciones Técnicas</h2>
-            <div className="surface-card rounded-sm overflow-hidden">
-              <table className="w-full" aria-label="Especificaciones técnicas">
+            <div className="surface-card overflow-x-auto rounded-sm">
+              <table className="w-full min-w-[280px]" aria-label="Especificaciones técnicas">
                 <thead>
                   <tr className="bg-secondary border-b border-border">
                     <th className="text-left text-[10px] font-bold text-primary tracking-widest uppercase px-4 py-3">Parámetro</th>

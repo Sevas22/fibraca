@@ -6,7 +6,7 @@ const footerLinks = {
   empresa: [
     { label: 'Proyectos', href: '/proyectos' },
     { label: 'Galería', href: '/galeria' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'RFQ', href: '/contacto' },
   ],
   productos: [
     { label: 'Barras y Mallas', href: '/productos?cat=barras' },
@@ -28,10 +28,10 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-footer-bg text-white" role="contentinfo">
-      <div className="container-max py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-14">
+      <div className="container-max py-12 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-5 lg:gap-14">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="group mb-5 inline-block" aria-label="Fibraca inicio">
               <FibracaLogo light markSize="sm" />
             </Link>
@@ -133,7 +133,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-10 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 sm:mt-14 sm:flex-row sm:pt-10">
           <p className="text-xs text-white/85">&copy; {new Date().getFullYear()} Fibraca. Todos los derechos reservados.</p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
             <Link href="#" className="text-xs text-white/85 transition-colors hover:text-white">

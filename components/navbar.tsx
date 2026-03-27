@@ -13,7 +13,7 @@ const navLinks = [
   { label: 'Tienda', href: '/productos' },
   { label: 'Proyectos', href: '/proyectos' },
   { label: 'Galería', href: '/galeria' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'RFQ', href: '/contacto' },
 ]
 
 export default function Navbar() {
@@ -30,11 +30,15 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background shadow-sm">
         <nav
-          className="container-max flex items-center justify-between h-20 md:h-[5.5rem]"
+          className="container-max flex items-center justify-between gap-2 h-[4.25rem] min-[400px]:h-20 sm:gap-3 md:h-[5.5rem]"
           aria-label="Navegación principal"
         >
-          {/* Logo — alineado a la izquierda, tamaño destacado */}
-          <Link href="/" className="group shrink-0 mr-4 self-center" aria-label="Fibraca inicio">
+          {/* Logo — un poco más compacto en móvil */}
+          <Link
+            href="/"
+            className="group min-w-0 shrink origin-left scale-[0.92] self-center min-[400px]:scale-100 sm:mr-2 md:mr-4"
+            aria-label="Fibraca inicio"
+          >
             <FibracaLogo markSize="xl" />
           </Link>
 
@@ -61,7 +65,7 @@ export default function Navbar() {
           </ul>
 
           {/* Actions */}
-          <div className="flex items-center gap-4">
+          <div className="flex shrink-0 items-center gap-2 min-[400px]:gap-3 sm:gap-4">
             <button
               onClick={toggleCart}
               className="relative p-2 text-muted-foreground hover:text-primary transition-colors"
@@ -99,8 +103,8 @@ export default function Navbar() {
             className="absolute inset-0 bg-background/80 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
-          <nav className="absolute top-20 md:top-[5.5rem] left-0 right-0 bg-card border-b border-border p-6 shadow-lg">
-            <ul className="flex flex-col gap-4" role="list">
+          <nav className="absolute left-0 right-0 top-[4.25rem] max-h-[min(70vh,calc(100dvh-4.25rem))] overflow-y-auto overscroll-contain border-b border-border bg-card p-4 shadow-lg min-[400px]:top-20 min-[400px]:max-h-[min(70vh,calc(100dvh-5rem))] sm:p-6 pb-[max(1rem,env(safe-area-inset-bottom,0px))]">
+            <ul className="flex flex-col gap-1 sm:gap-2" role="list">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link

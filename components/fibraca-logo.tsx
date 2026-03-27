@@ -16,7 +16,7 @@ const WORDMARK_BY_SIZE: Record<FibracaLogoSize, string> = {
 }
 
 /**
- * Isotipo: fibras paralelas (PRFV) dentro de un aro — vector plano, legible a cualquier tamaño.
+ * Isotipo: silueta latinoamericana (referencia regional) + fibras PRFV en paralelo.
  */
 export function FibracaLogoMark({
   className,
@@ -45,12 +45,19 @@ export function FibracaLogoMark({
         </clipPath>
       </defs>
       <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <g clipPath={`url(#${clipId})`} stroke="currentColor" strokeLinecap="round">
-        <g transform="translate(24 24) rotate(-27)">
-          <line x1="-19" y1="-7.5" x2="19" y2="-7.5" strokeWidth="2.2" opacity="0.4" />
-          <line x1="-19" y1="-2.5" x2="19" y2="-2.5" strokeWidth="2.35" opacity="0.72" />
-          <line x1="-19" y1="2.5" x2="19" y2="2.5" strokeWidth="2.35" opacity="0.72" />
-          <line x1="-19" y1="7.5" x2="19" y2="7.5" strokeWidth="2.2" opacity="0.4" />
+      <g clipPath={`url(#${clipId})`}>
+        {/* América Latina — forma esquemática (negocio regional), detrás de las fibras */}
+        <g transform="translate(24 31.5) scale(0.92)" fill="currentColor" opacity={light ? 0.22 : 0.16}>
+          <path d="M -14 -9.5 C -15 -6 -14 -2 -12 1 C -11 4 -8 6 -5 6.5 C -1 7 3 6 6.5 4 C 10 2 12.5 -1 13 -4.5 C 13.5 -8 11.5 -11 8 -12.5 C 4 -14 -1 -13.5 -5 -12 C -9.5 -11 -13.5 -10.5 -14 -9.5 Z" />
+          <path d="M -5 -12 L -7 -15.5 L -3.5 -16.5 L -1 -14.5 L -2 -12.5 Z" opacity="0.85" />
+        </g>
+        <g stroke="currentColor" strokeLinecap="round">
+          <g transform="translate(24 24) rotate(-27)">
+            <line x1="-19" y1="-7.5" x2="19" y2="-7.5" strokeWidth="2.2" opacity="0.4" />
+            <line x1="-19" y1="-2.5" x2="19" y2="-2.5" strokeWidth="2.35" opacity="0.72" />
+            <line x1="-19" y1="2.5" x2="19" y2="2.5" strokeWidth="2.35" opacity="0.72" />
+            <line x1="-19" y1="7.5" x2="19" y2="7.5" strokeWidth="2.2" opacity="0.4" />
+          </g>
         </g>
       </g>
     </svg>

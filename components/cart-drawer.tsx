@@ -23,13 +23,13 @@ export default function CartDrawer() {
 
       {/* Drawer */}
       <aside
-        className="fixed right-0 top-0 bottom-0 z-50 w-full max-w-md bg-card border-l border-border flex flex-col"
+        className="fixed inset-y-0 right-0 z-50 flex max-h-dvh min-h-0 w-full max-w-md flex-col border-l border-border bg-card pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
         role="dialog"
         aria-modal="true"
         aria-label="Carrito de compras"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-border">
+        <div className="flex shrink-0 items-center justify-between border-b border-border p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <ShoppingBag className="w-5 h-5 text-primary" aria-hidden="true" />
             <h2 className="text-lg font-display font-bold">
@@ -51,7 +51,7 @@ export default function CartDrawer() {
         </div>
 
         {/* Items */}
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-4 sm:p-6">
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
               <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center">
@@ -125,7 +125,7 @@ export default function CartDrawer() {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="p-6 border-t border-border">
+          <div className="shrink-0 border-t border-border p-4 sm:p-6">
             {totalAmount > 0 && (
               <div className="flex items-center justify-between mb-4">
                 <span className="text-sm text-muted-foreground">Subtotal</span>

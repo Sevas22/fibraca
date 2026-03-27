@@ -37,7 +37,7 @@ export default function GaleriaPage() {
     <SiteLayout>
       <PageBanner
         imageSrc="/images/banner-marca.png"
-        sectionClassName="pt-32 pb-16 md:pb-20"
+        sectionClassName="page-hero md:pb-20"
         innerClassName="container-max"
         aria-labelledby="galeria-heading"
         overlayClassName={BANNER_OVERLAY_READABLE}
